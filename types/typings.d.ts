@@ -24,7 +24,7 @@ type NewsResponse = {
 };
 
 type Category =
-  | "bussiness"
+  | "business"
   | "entertainment"
   | "general"
   | "health"
