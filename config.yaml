@@ -1,4 +1,0 @@
-configurationset:
-  - configuration:
-      name: curl_import_config
-      authentication_c84c779861: sobradinho::stepzen.net+1000::e516a513959648d5f52e41b9b4bc671d6e298e3f52b03ac1fdc2432fc25eaabb
