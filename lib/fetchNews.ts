@@ -6,9 +6,8 @@ const fetchNews = async (
   keywords?: string,
   isDynamic?: boolean
 ) => {
-  //? GraphQL query
   const query = gql`
-    query myQuery(
+    query MyQuery(
       $access_key: String!
       $categories: String!
       $keywords: String
@@ -16,7 +15,7 @@ const fetchNews = async (
       myQuery(
         access_key: $access_key
         categories: $categories
-        countries: "tr"
+        countries: "gb"
         sort: "published_desc"
         keywords: $keywords
       ) {
@@ -35,22 +34,23 @@ const fetchNews = async (
         pagination {
           count
           limit
-          total
           offset
+          total
         }
       }
     }
   `;
   //? Fetch func with Next.js 13 caching...
+
   const res = await fetch(
-    "https://sobradinho.stepzen.net/api/zeroed-wasp/__graphql",
+    "https://sobradinho.stepzen.net/api/punk-spaniel/__graphql",
     {
       method: "POST",
       cache: isDynamic ? "no-cache" : "default",
       next: isDynamic ? { revalidate: 0 } : { revalidate: 20 },
       headers: {
         "Content-Type": "application/json",
-        Authorization: `apikey ${process.env.STEPZEN_API_KEY}`,
+        Authorization: `APIKey ${process.env.STEPZEN_API_KEY}`,
       },
       body: JSON.stringify({
         query: query,
@@ -63,16 +63,15 @@ const fetchNews = async (
     }
   );
 
-  console.log(category, keywords);
-
+  console.log(category);
   const newsResponse = await res.json();
+
   //? Sort func by images cs not images
+  const news = sortNewsByImage(newsResponse.data.myQuery);
 
-  //   const news = sortNewsByImage(newsResponse.data.myQuery);
-
-  return newsResponse;
+  return news;
 };
 
 export default fetchNews;
 
-//! stepzen import curl http://api.mediastack.com/v1/news?access_key=ad9041fc822e12eac76f4d9490ca09ae&sources=business
+//! stepzen import curl http://api.mediastack.com/v1/news?access_key=ad9041fc822e12eac76f4d9490ca09ae&countries=tr%2Cus&limit=100&offset=0&sort=published_desc
