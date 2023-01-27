@@ -1,5 +1,6 @@
 "use client";
 
+//! COMPONENTS
 import { ThemeProvider } from "next-themes";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {

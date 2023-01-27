@@ -1,6 +1,9 @@
 "use client";
+//! HOOKS
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
+
+//! ICONS
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 
 type Props = {};

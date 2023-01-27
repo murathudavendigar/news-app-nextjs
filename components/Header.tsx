@@ -6,8 +6,11 @@ import NavLinks from "./NavLinks";
 import SearchBox from "./SearchBox";
 
 //! 3rd PARTY LIB
-import { Bars3Icon } from "@heroicons/react/24/solid";
+//! COMPONENTS
 import DarkModeButton from "./DarkModeButton";
+
+//! ICON
+import { Bars3Icon } from "@heroicons/react/24/solid";
 
 const Header = () => {
   return (

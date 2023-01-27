@@ -1,4 +1,6 @@
 "use client";
+
+//! COMPONENTS
 import TimeAgo from "react-timeago";
 
 type Props = { time: string };

@@ -1,4 +1,4 @@
-import React from "react";
+//! COMPONENTS
 import Article from "./Article";
 
 type Props = {

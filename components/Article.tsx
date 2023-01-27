@@ -1,4 +1,4 @@
-import React from "react";
+//! COMPONENTS
 import LiveTimestamp from "./LiveTimestamp";
 import ReadMoreButton from "./ReadMoreButton";
 

@@ -63,7 +63,6 @@ const fetchNews = async (
     }
   );
 
-  console.log(category);
   const newsResponse = await res.json();
 
   //? Sort func by images cs not images

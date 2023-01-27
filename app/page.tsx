@@ -1,11 +1,14 @@
+//! COMPONENTS
 import NewsList from "../components/NewsList";
+
+//! CONSTANTS
 import { categories } from "../constants";
+
+//! FUNC
 import fetchNews from "../lib/fetchNews";
-import response from "../response.json";
 
 const Homepage = async () => {
-  const news: NewsResponse =
-    response || (await fetchNews(categories.join(",")));
+  const news: NewsResponse = await fetchNews(categories.join(","));
 
   return (
     <div>

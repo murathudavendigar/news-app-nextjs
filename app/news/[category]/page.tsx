@@ -1,5 +1,10 @@
+//! COMPONENTS
 import NewsList from "../../../components/NewsList";
+
+//! CONSTANTS
 import { categories } from "../../../constants";
+
+//! FUNC
 import fetchNews from "../../../lib/fetchNews";
 
 type Props = {
